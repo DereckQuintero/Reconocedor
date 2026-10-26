@@ -35,7 +35,7 @@ cd Reconocedor
 2. Crea y activa un entorno virtual:
 
 ```bash
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate
 ```
 
@@ -49,8 +49,8 @@ python -m venv .venv
 3. Instala las dependencias:
 
 ```bash
-pip install --upgrade pip
-pip install -r requirements.txt
+python3 -m pip install --upgrade pip
+python3 -m pip install -r requirements.txt
 ```
 
 ## Entrenar el modelo
@@ -58,7 +58,7 @@ pip install -r requirements.txt
 Si aún no existe el archivo `modelo_mnist.h5`, ejecuta:
 
 ```bash
-python entrenar_modelo.py
+python3 entrenar_modelo.py
 ```
 
 Este script:
@@ -74,7 +74,7 @@ Este script:
 Una vez que el modelo esté listo, inicia la app:
 
 ```bash
-python preconocer_numeros.py
+python3 preconocer_numeros.py
 ```
 
 Luego abre en tu navegador:
@@ -88,6 +88,26 @@ La aplicación mostrará:
 - la transmisión de la cámara en vivo,
 - un recuadro verde alrededor del área analizada,
 - el número detectado en la pantalla.
+
+## Capturas del proyecto
+
+### 1. Entrenamiento del modelo
+
+![Entrenamiento del modelo](assets/Captura%20desde%202026-10-25%2021-15-25.png)
+
+Esta captura muestra la fase de entrenamiento del modelo CNN sobre el conjunto MNIST. En la consola se observa cómo la pérdida disminuye y la precisión aumenta a medida que avanzan las épocas, lo que confirma que el modelo está aprendiendo a clasificar dígitos correctamente.
+
+### 2. Interfaz principal de la aplicación
+
+![Interfaz web](assets/Captura%20desde%202026-10-25%2021-18-16.png)
+
+Aquí se ve la interfaz web desarrollada con Flask. La parte izquierda muestra la cámara en vivo y el recuadro verde que marca la zona de análisis, mientras que la parte derecha presenta el número detectado por el modelo. Esta vista permite al usuario ver el proceso en tiempo real de forma clara y simple.
+
+### 3. Reconocimiento en tiempo real
+
+![Reconocimiento del número](assets/Captura%20desde%202026-10-25%2021-18-34.png)
+
+En esta imagen se aprecia el sistema analizando un número escrito en papel. El modelo reconoce la figura dentro del rectángulo verde y la muestra en el panel lateral, demostrando que la clasificación funciona en un caso real con cámara en vivo.
 
 ## Nota sobre la cámara
 
@@ -116,7 +136,7 @@ pip install -r requirements.txt
 Ejecuta antes:
 
 ```bash
-python entrenar_modelo.py
+python3 entrenar_modelo.py
 ```
 
 ## Licencia
